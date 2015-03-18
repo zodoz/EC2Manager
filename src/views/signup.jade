@@ -1,0 +1,29 @@
+extends ./template.jade
+
+block title
+  title Signup
+
+block content
+  div.loginbox.mainbox.col-md-6.col-md-offset-3.col-sm-8.col-sm-offset-2
+    div.panel.panel-info
+      div.panel-heading
+        div.panel-title Sign Up
+      div.login-body.panel-body
+        form#login-form.form-horizontal(role="form")
+          div.input-group
+            //<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+            span.input-group-addon
+              i.glyphicon.glyphicon-user
+            input.form-control(type="text", id="signup-username",
+                name="username", placeholder="Enter username")
+          div.input-group
+            span.input-group-addon
+              i.glyphicon.glyphicon-lock
+            input.form-control(type="Password", id="password",
+                placeholder="Enter password")
+          div.input-group
+            span.input-group-addon
+              i.glyphicon.glyphicon-lock
+            input.form-control(type="Password", id="passwordConfirm",
+                placeholder="Enter password")
+          button.btn.btn-default Submit
