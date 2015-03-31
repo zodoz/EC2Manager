@@ -6,22 +6,23 @@ mongoose = require 'mongoose'
 routes = require './src/routes'
 config = require './config'
 
-app = express()
+module.exports = ->
+  app = express()
 
-app.set 'views', "#{__dirname}/src/views"
-app.set 'view engine', 'jade'
+  app.set 'views', "#{__dirname}/src/views"
+  app.set 'view engine', 'jade'
 
-app.use bodyParser.json()
-app.use session
-  secret: config.app.sessionSecret
-  resave: true
-  saveUninitialized: true
-app.use passport.initialize()
-app.use passport.session()
-app.use express.static "#{__dirname}/dist"
+  app.use bodyParser.json()
+  app.use session
+    secret: config.app.sessionSecret
+    resave: true
+    saveUninitialized: true
+  app.use passport.initialize()
+  app.use passport.session()
+  app.use express.static "#{__dirname}/dist"
 
-routes app
+  routes app
 
-mongoose.connect config.db.url
+  mongoose.connect config.db.url
 
-app.listen(config.app.port)
+  app.listen(config.app.port)

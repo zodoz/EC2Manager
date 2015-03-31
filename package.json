@@ -2,7 +2,7 @@
   "name": "EC2Manager",
   "version": "0.0.0",
   "description": "Manage EC2 instance scheduling in developer environments.",
-  "main": "app.coffee",
+  "main": "app.js",
   "dependencies": {
     "bcrypt": "^0.8.1",
     "body-parser": "^1.12.0",
@@ -30,7 +30,6 @@
     "grunt-nodemon": "^0.4.0",
     "load-grunt-tasks": "^3.1.0",
     "mocha": "^2.1.0",
-    "mockgoose": "^1.10.7",
     "sinon": "^1.12.2"
   },
   "scripts": {
