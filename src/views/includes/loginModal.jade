@@ -1,0 +1,46 @@
+script(type="text/ng-template", id="loginModal.html")
+  div.modal-header
+    h3.modal-title Login
+  div.modal-body
+    tabset
+      tab(heading="Login")
+        .panel-body
+          form#login-form.form-horizontal(role="form", novalidate)
+            div.input-group
+              spn.input-group-addon
+                i.glyphicon.glyphicon-user
+              input.form-control(type="text", id="login-username",
+                name="login-username", placeholder="Username",
+                ng-model="login.user.username")
+            div.input-group
+              spn.input-group-addon
+                i.glyphicon.glyphicon-lock
+              input.form-control(type="Password", id="login-password",
+                name="login-password", placeholder="Password",
+                ng-model="login.user.password")
+            button.btn.btn-primary.btn-lg(ng-click="loginClick()") Login
+      tab(heading="Signup")
+        .panel-body
+          form#signup-form.form-horizontal(role="form")
+            div.input-group
+              //<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              span.input-group-addon
+                i.glyphicon.glyphicon-user
+              input.form-control(type="text", id="signup-username",
+                  name="signup-username", placeholder="Enter username",
+                  ng-model="signup.user.username")
+            div.input-group
+              span.input-group-addon
+                i.glyphicon.glyphicon-lock
+              input.form-control(type="Password", id="signup-password",
+                  placeholder="Enter password", name="signup-password",
+                  ng-model="signup.user.password")
+            div.input-group
+              span.input-group-addon
+                i.glyphicon.glyphicon-lock
+              input.form-control(type="Password", id="passwordConfirm",
+                  placeholder="Enter password")
+            button.btn.btn-primary.btn-lg(ng-click="signupClick()") Signup
+  div.modal-footer
+    button.btn.btn-primary(ng-click="login()") Login
+    button.btn.btn-default(ng-click="cancelModal()") Cancel

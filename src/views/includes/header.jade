@@ -1,0 +1,17 @@
+nav.navbar.navbar-default(ng-controller="NavbarCtrl")
+  .container-fluid
+    a.navbar-brand(href="/") EC2Manager
+    div.navbar-nav.navbar-right
+      button.btn.btn-primary.btn-lg(
+        ng-click="login()", ng-show="isLoggedIn()") Login
+      button.btn.btn-danger.btn-lg(
+        ng-click="logout()", ng-show="!isLoggedIn()") Logout
+include loginModal
+//- Create javascript to inject user information into the controller's scope
+if user !== undefined
+  script(type="text/javascript").
+    $(function() {
+      var scope = $('#loginCtrl').scope();
+      scope.setUser(!{JSON.stringify(user)});
+      scope.$apply();
+    })
