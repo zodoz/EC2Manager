@@ -9,7 +9,7 @@ module.exports =
       ]
   nodemon:
     dev:
-      script: 'app.coffee'
+      script: 'app.js'
       options:
         ext: 'coffee'
         watch: [

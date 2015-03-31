@@ -8,7 +8,7 @@ loadConfig = (dir) ->
   fullObject = {}
   options = glob.sync '*', cwd: dir
   options.forEach (optionFile) ->
-      _.merge fullObject, require dir + optionFile
+    _.merge fullObject, require dir + optionFile
 
   return fullObject
 
