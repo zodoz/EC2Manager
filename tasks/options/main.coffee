@@ -6,7 +6,7 @@ module.exports =
       options:
         livereload: true
     mainScripts:
-      files: ['src/scripts/*.coffee']
+      files: ['src/scripts/**/*.coffee']
       tasks: ['coffee:main']
       options:
         livereload: true
@@ -33,3 +33,10 @@ module.exports =
         sourceMapDir: 'dist/js/'
       files:
         'dist/js/login.js': 'src/scripts/login.coffee'
+        'dist/js/modules.js': 'src/scripts/modules.coffee'
+        'dist/js/helpers.js': [
+          'src/scripts/constants/*.coffee'
+          'src/scripts/services/SessionService.coffee'
+          'src/scripts/services/UserService.coffee'
+        ]
+        'dist/js/NavbarCtrl.js': 'src/scripts/NavbarCtrl.coffee'

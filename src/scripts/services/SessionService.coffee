@@ -1,4 +1,4 @@
-angular.moduel 'EC2Manager'
+angular.module 'EC2Manager'
   .service 'Session', ->
     @create = (sessionId, userId) =>
       @id = sessionId

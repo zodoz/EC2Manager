@@ -5,5 +5,6 @@ module.exports = (grunt) ->
     'copy:bootstrap'
     'copy:jquery'
     'copy:angular'
+    'copy:angularRoute'
     'copy:uiBootstrap'
   ]
