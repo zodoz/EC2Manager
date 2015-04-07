@@ -7,3 +7,5 @@ angular.module 'EC2Manager'
     @destroy = =>
       @id = null
       @user = null
+
+    return

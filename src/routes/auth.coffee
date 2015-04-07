@@ -27,7 +27,7 @@ routeAuth = (router) ->
           user: req.user
 
     router.post '/logout',
-      ensureAuthenticated,
+      #ensureAuthenticated,
       (req, res) ->
         req.logout()
         res.send

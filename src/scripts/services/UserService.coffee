@@ -23,8 +23,11 @@ angular.module 'EC2Manager'
 
     logout = ->
       $http.post '/logout'
-        .success ->
+        .success (data) ->
+          console.log 'logout success', data
           Session.destroy()
+        .error (data) ->
+          console.log 'logout error', data
 
     isLoggedIn = ->
       !!Session.user
@@ -32,3 +35,4 @@ angular.module 'EC2Manager'
     login: login
     logout: logout
     signup: signup
+    isLoggedIn: isLoggedIn
