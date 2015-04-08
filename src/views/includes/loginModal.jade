@@ -1,45 +1,48 @@
 script(type="text/ng-template", id="loginModal.html")
-  div.modal-header
-    h3.modal-title Login
-  div.modal-body
-    tabset
-      tab(heading="Login", ng-click="setTab('login')")
-        .panel-body
-          form#login-form.form-horizontal(role="form", novalidate)
-            div.input-group
-              spn.input-group-addon
-                i.glyphicon.glyphicon-user
-              input.form-control(type="text", id="login-username",
-                name="login-username", placeholder="Username",
-                ng-model="login.username")
-            div.input-group
-              spn.input-group-addon
-                i.glyphicon.glyphicon-lock
-              input.form-control(type="Password", id="login-password",
-                name="login-password", placeholder="Password",
-                ng-model="login.password")
-      tab(heading="Signup", ng-click="setTab('signup')")
-        .panel-body
-          form#signup-form.form-horizontal(role="form")
-            div.input-group
-              //<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              span.input-group-addon
-                i.glyphicon.glyphicon-user
-              input.form-control(type="text", id="signup-username",
-                  name="signup-username", placeholder="Enter username",
-                  ng-model="signup.username")
-            div.input-group
-              span.input-group-addon
-                i.glyphicon.glyphicon-lock
-              input.form-control(type="Password", id="signup-password",
-                  placeholder="Enter password", name="signup-password",
-                  ng-model="signup.password")
-            div.input-group
-              span.input-group-addon
-                i.glyphicon.glyphicon-lock
-              input.form-control(type="Password", id="passwordConfirm",
-                  placeholder="Enter password")
-  div.modal-footer
-    button.btn.btn-primary(ng-click="clickLoginSignup()", ng-show="tab === 'login'") Login
-    button.btn.btn-primary(ng-click="clickLoginSignup()", ng-show="tab === 'signup'") Signup
-    button.btn.btn-default(ng-click="cancelModal()") Cancel
+  div
+    div.modal-header
+      h3.modal-title Login
+    div.modal-body
+      alert(type="danger", close="closeAlert()", ng-show="alert.show") {{alert.message}}
+      tabset
+        tab(heading="Login", ng-click="setTab('login')")
+          .panel-body
+            form#login-form.form-horizontal(role="form", novalidate)
+              div.input-group
+                spn.input-group-addon
+                  i.glyphicon.glyphicon-user
+                input.form-control(type="text", id="login-username",
+                  name="login-username", placeholder="Username",
+                  ng-model="login.username")
+              div.input-group
+                spn.input-group-addon
+                  i.glyphicon.glyphicon-lock
+                input.form-control(type="Password", id="login-password",
+                  name="login-password", placeholder="Password",
+                  ng-model="login.password")
+        tab(heading="Signup", ng-click="setTab('signup')")
+          .panel-body
+            form#signup-form.form-horizontal(role="form")
+              div.input-group
+                //<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                span.input-group-addon
+                  i.glyphicon.glyphicon-user
+                input.form-control(type="text", id="signup-username",
+                    name="signup-username", placeholder="Enter username",
+                    ng-model="signup.username")
+              div.input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-lock
+                input.form-control(type="Password", id="signup-password",
+                    placeholder="Enter password", name="signup-password",
+                    ng-model="signup.password")
+              div.input-group
+                span.input-group-addon
+                  i.glyphicon.glyphicon-lock
+                input.form-control(type="Password", id="passwordConfirm",
+                    ng-model="signup.passwordConfirm", placeholder="Enter password",
+                    ng-valid="signup.password === signup.passwordConfirm")
+    div.modal-footer
+      button.btn.btn-primary(ng-click="clickLogin()", ng-show="tab === 'login'") Login
+      button.btn.btn-primary(ng-click="clickSignup()", ng-show="tab === 'signup'") Signup
+      button.btn.btn-default(ng-click="cancelModal()") Cancel
